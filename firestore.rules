@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Usuarios que pueden usar la app.
+    // Cada usuario se escribe con @helados.app al final.
+    // Ejemplo: el usuario "freyman" se pone como 'freyman@helados.app'
+    // Para agregar a alguien más, separalo con coma.
+    function permitido() {
+      return request.auth != null
+        && request.auth.token.email in [
+             'freyman@helados.app'
+           ];
+    }
+
+    match /{document=**} {
+      allow read, write: if permitido();
+    }
+  }
+}

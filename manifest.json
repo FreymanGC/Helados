@@ -1,0 +1,13 @@
+{
+  "name": "Helados Caseros",
+  "short_name": "Helados",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF7EF",
+  "theme_color": "#EF5B8C",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
